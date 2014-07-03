@@ -302,7 +302,7 @@ bool SAS::Connection::connect_init()
   SAS_LOG_STATUS("Attempting to connect to SAS %s", _sas_address.c_str());
 
   memset(&hints, 0, sizeof hints);
-  hints.ai_family = AF_INET;
+  hints.ai_family = AF_UNSPEC;
   hints.ai_socktype = SOCK_STREAM;
 
   rc = getaddrinfo(_sas_address.c_str(), SAS_PORT, &hints, &addrs);
